@@ -4,6 +4,7 @@ import static com.gtnewhorizon.gtnhlib.client.model.ModelISBRH.JSON_ISBRH_ID;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.world.World;
 
 import com.cassiokf.irdecor.init.ModCreativeTab;
@@ -35,6 +36,11 @@ public class BlockIRBase extends Block {
     @Override
     public boolean renderAsNormalBlock() {
         return false;
+    }
+
+    @Override
+    public void registerBlockIcons(IIconRegister reg) {
+        blockIcon = reg.registerIcon("irdecor:metal");
     }
 
     @Override

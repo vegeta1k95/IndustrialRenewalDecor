@@ -15,6 +15,6 @@ public class ModCreativeTab extends CreativeTabs {
 
     @Override
     public Item getTabIconItem() {
-        return Item.getItemFromBlock(ModBlocks.HANDRAIL_IRON);
+        return Item.getItemFromBlock(ModBlocks.CATWALK_STEEL);
     }
 }

@@ -2,7 +2,7 @@
 
 A simple backport of decorative blocks from [Industrial Renewal](https://github.com/Cassiobsk8/Industrial_Renewal) to Minecraft 1.7.10 (GTNH).
 
-Only decorative blocks are included — no machinery, energy, or fluid systems.
+Only decorative blocks are included — no machinery, energy, fluid or storage systems.
 
 ![Showcase](screenshots/showcase.png)
 
