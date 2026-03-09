@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package com.cassiokf.irdecor;
 
 import java.io.File;
 
@@ -6,12 +6,14 @@ import net.minecraftforge.common.config.Configuration;
 
 public class Config {
 
-    public static String greeting = "Hello World";
+    public static float razorWireDamage = 1.0f;
 
     public static void synchronizeConfiguration(File configFile) {
         Configuration configuration = new Configuration(configFile);
 
-        greeting = configuration.getString("greeting", Configuration.CATEGORY_GENERAL, greeting, "How shall I greet?");
+        razorWireDamage = (float) configuration
+            .get(Configuration.CATEGORY_GENERAL, "razorWireDamage", 1.0, "Damage dealt by razor wire")
+            .getDouble();
 
         if (configuration.hasChanged()) {
             configuration.save();

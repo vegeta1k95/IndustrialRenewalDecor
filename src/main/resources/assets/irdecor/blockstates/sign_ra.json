@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "facing=north,onwall=false": { "model": "irdecor:block/sign/sign_ra_gnd" },
+    "facing=south,onwall=false": { "model": "irdecor:block/sign/sign_ra_gnd", "y": 180 },
+    "facing=west,onwall=false": { "model": "irdecor:block/sign/sign_ra_gnd", "y": 90 },
+    "facing=east,onwall=false": { "model": "irdecor:block/sign/sign_ra_gnd", "y": 270 },
+    "facing=north,onwall=true": { "model": "irdecor:block/sign/sign_ra_wall" },
+    "facing=south,onwall=true": { "model": "irdecor:block/sign/sign_ra_wall", "y": 180 },
+    "facing=west,onwall=true": { "model": "irdecor:block/sign/sign_ra_wall", "y": 90 },
+    "facing=east,onwall=true": { "model": "irdecor:block/sign/sign_ra_wall", "y": 270 }
+  }
+}

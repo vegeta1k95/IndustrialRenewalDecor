@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "active=false,facing=south": { "model": "irdecor:block/catwalk_gate_0", "y": 180 },
+    "active=false,facing=north": { "model": "irdecor:block/catwalk_gate_0" },
+    "active=false,facing=west": { "model": "irdecor:block/catwalk_gate_0", "y": 90 },
+    "active=false,facing=east": { "model": "irdecor:block/catwalk_gate_0", "y": 270 },
+    "active=true,facing=south": { "model": "irdecor:block/catwalk_gate_1", "y": 180 },
+    "active=true,facing=north": { "model": "irdecor:block/catwalk_gate_1" },
+    "active=true,facing=west": { "model": "irdecor:block/catwalk_gate_1", "y": 90 },
+    "active=true,facing=east": { "model": "irdecor:block/catwalk_gate_1", "y": 270 }
+  }
+}

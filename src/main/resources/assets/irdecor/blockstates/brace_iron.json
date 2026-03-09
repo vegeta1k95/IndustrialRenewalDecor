@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "facing=0": { "model": "irdecor:block/brace", "x": 180, "y": 270 },
+    "facing=1": { "model": "irdecor:block/brace", "y": 270 },
+    "facing=2": { "model": "irdecor:block/brace", "y": 90 },
+    "facing=3": { "model": "irdecor:block/brace", "y": 180 },
+    "facing=4": { "model": "irdecor:block/brace" },
+    "facing=5": { "model": "irdecor:block/brace", "x": 180, "y": 90 },
+    "facing=6": { "model": "irdecor:block/brace", "x": 180, "y": 180 },
+    "facing=7": { "model": "irdecor:block/brace", "x": 180 }
+  }
+}

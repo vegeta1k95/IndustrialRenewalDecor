@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git:*)",
+      "Bash(xargs:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebSearch",
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(jar tf:*)",
+      "Read(//d/tmp/**)",
+      "Bash(jar xf /c/Users/tuner/.gradle/caches/modules-2/files-2.1/com.github.GTNewHorizons/GTNHLib/0.9.37/5158128087442571f1e4f38ae40e774c952c539b/GTNHLib-0.9.37-sources.jar com/gtnewhorizon/gtnhlib/blockproperty/)",
+      "Bash(unzip:*)",
+      "Bash(grep:*)",
+      "Bash(cp:*)",
+      "Bash(sed:*)",
+      "Bash(JAVA_HOME=\"/c/Users/tuner/.gradle/jdks/azul_systems__inc_-21-amd64-windows.2\" ./gradlew spotlessApply:*)",
+      "Bash(export:*)",
+      "Bash(do sed:*)"
+    ]
+  }
+}
