@@ -2,7 +2,7 @@
   "credit": "Made with Blockbench",
   "textures": {
     "1": "minecraft:anvil_base",
-    "2": "irdecor:block_hazard"
+    "2": "irdecor:rail_loader"
   },
   "elements": [
     {

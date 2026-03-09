@@ -1,7 +1,7 @@
 {
   "credit": "Made with Blockbench",
   "textures": {
-    "2": "irdecor:block_hazard"
+    "2": "irdecor:rail_loader"
   },
   "elements": [
     {
