@@ -180,7 +180,7 @@ public class BlockCatwalk extends BlockIRConnectable {
                         x + 0.5,
                         y + 0.5,
                         z + 0.5,
-                        "random.door_open",
+                        "irdecor:gate_opening",
                         1.0f,
                         world.rand.nextFloat() * 0.2f + 0.9f);
                 }
@@ -192,8 +192,7 @@ public class BlockCatwalk extends BlockIRConnectable {
 
     @Override
     public void setBlockBoundsBasedOnState(IBlockAccess world, int x, int y, int z) {
-        // Full block height for easy selection; actual collision is in addCollisionBoxesToList
-        setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f);
+        setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 0.03125f, 1.0f);
     }
 
     @SuppressWarnings("unchecked")

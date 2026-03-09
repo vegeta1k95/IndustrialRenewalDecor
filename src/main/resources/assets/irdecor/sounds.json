@@ -1,0 +1,22 @@
+{
+  "gate_opening": {
+    "category": "block",
+    "subtitle": "gate_opening",
+    "sounds": [
+      {
+        "name": "irdecor:gate_opening",
+        "stream": false
+      }
+    ]
+  },
+  "gate_closing": {
+    "category": "block",
+    "subtitle": "gate_closing",
+    "sounds": [
+      {
+        "name": "irdecor:gate_closing",
+        "stream": false
+      }
+    ]
+  }
+}

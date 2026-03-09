@@ -122,7 +122,7 @@ public class BlockCatwalkStair extends BlockIRHorizontalFacing {
                     x + 0.5,
                     y + 0.5,
                     z + 0.5,
-                    "random.door_open",
+                    "irdecor:gate_opening",
                     1.0f,
                     world.rand.nextFloat() * 0.2f + 0.9f);
             }

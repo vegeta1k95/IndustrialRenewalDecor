@@ -57,11 +57,12 @@ public class BlockCatwalkLadder extends BlockIRHorizontalFacing {
                 int meta = world.getBlockMetadata(x, y, z);
                 meta ^= 0x4;
                 world.setBlockMetadataWithNotify(x, y, z, meta, 3);
+                boolean opened = (meta & 0x4) != 0;
                 world.playSoundEffect(
                     x + 0.5,
                     y + 0.5,
                     z + 0.5,
-                    "random.door_open",
+                    opened ? "irdecor:gate_opening" : "irdecor:gate_closing",
                     1.0f,
                     world.rand.nextFloat() * 0.2f + 0.9f);
             }
