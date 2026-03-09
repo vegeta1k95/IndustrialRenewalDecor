@@ -27,13 +27,11 @@ public class ModProperties {
 
     private static DirectionBlockProperty createHorizontalFacing(int mask) {
         return DirectionBlockProperty.facing(mask, dir -> switch (dir) {
-            case SOUTH -> 0;
             case WEST -> 1;
             case NORTH -> 2;
             case EAST -> 3;
             default -> 0;
         }, meta -> switch (meta & 0x3) {
-            case 0 -> ForgeDirection.SOUTH;
             case 1 -> ForgeDirection.WEST;
             case 2 -> ForgeDirection.NORTH;
             case 3 -> ForgeDirection.EAST;
@@ -47,16 +45,9 @@ public class ModProperties {
      */
     private static void registerOnClassAndItems(Class<? extends Block> blockClass, BlockProperty<?> prop,
         Block... blocks) {
-        BlockPropertyRegistry.registerProperty(blockClass, prop);
-        for (Block block : blocks) {
-            Item item = Item.getItemFromBlock(block);
-            if (item != null) {
-                BlockPropertyRegistry.registerProperty(item, prop);
-            }
+        if (blockClass != null) {
+            BlockPropertyRegistry.registerProperty(blockClass, prop);
         }
-    }
-
-    private static void registerOnItems(BlockProperty<?> prop, Block... blocks) {
         for (Block block : blocks) {
             Item item = Item.getItemFromBlock(block);
             if (item != null) {
@@ -72,7 +63,7 @@ public class ModProperties {
     private static void registerFacingWithInventory(Class<? extends Block> blockClass, Block... blocks) {
         var facingProp = createHorizontalFacing(0x3);
         BlockPropertyRegistry.registerProperty(blockClass, facingProp);
-        registerOnItems(new FixedInventoryProperty("facing", "south"), blocks);
+        registerOnClassAndItems(null, new FixedInventoryProperty("facing", "south"), blocks);
     }
 
     public static void register() {
@@ -102,7 +93,7 @@ public class ModProperties {
         var facingProp = IntegerBlockProperty.meta("facing", 0x7, 0);
 
         BlockPropertyRegistry.registerProperty(BlockBrace.class, facingProp);
-        registerOnItems(new FixedInventoryProperty("facing", "0"), blocks);
+        registerOnClassAndItems(null, new FixedInventoryProperty("facing", "0"), blocks);
     }
 
     private static void registerHatchProperties() {
@@ -132,7 +123,7 @@ public class ModProperties {
         var activeRightProp = new ComputedBooleanProperty("active_right", BlockCatwalkStair::hasRightRailing, true);
 
         BlockPropertyRegistry.registerProperty(BlockCatwalkStair.class, createHorizontalFacing(0x3));
-        registerOnItems(new FixedInventoryProperty("facing", "west"), stairs);
+        registerOnClassAndItems(null, new FixedInventoryProperty("facing", "west"), stairs);
         registerOnClassAndItems(BlockCatwalkStair.class, activeLeftProp, stairs);
         registerOnClassAndItems(BlockCatwalkStair.class, activeRightProp, stairs);
     }

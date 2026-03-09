@@ -9,7 +9,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import com.cassiokf.irdecor.Config;
 import com.cassiokf.irdecor.util.IRDirectionHelper;
 
 public class BlockRazorWire extends BlockIRHorizontalFacing {
@@ -30,7 +29,7 @@ public class BlockRazorWire extends BlockIRHorizontalFacing {
     public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
         if (entity instanceof EntityLivingBase) {
             entity.setInWeb();
-            entity.attackEntityFrom(DamageSource.cactus, Config.razorWireDamage);
+            entity.attackEntityFrom(DamageSource.cactus, 1.0f);
         }
     }
 
@@ -67,10 +66,5 @@ public class BlockRazorWire extends BlockIRHorizontalFacing {
             default:
                 return dir;
         }
-    }
-
-    @Override
-    public int damageDropped(int meta) {
-        return 0;
     }
 }

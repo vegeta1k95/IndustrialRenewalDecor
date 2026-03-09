@@ -26,11 +26,6 @@ public class BlockIRHorizontalFacing extends BlockIRBase {
         world.setBlockMetadataWithNotify(x, y, z, meta, 2);
     }
 
-    @Override
-    public int damageDropped(int meta) {
-        return 0;
-    }
-
     public static ForgeDirection getFacing(int meta) {
         return IRDirectionHelper.metaToDirection(meta & 0x3);
     }

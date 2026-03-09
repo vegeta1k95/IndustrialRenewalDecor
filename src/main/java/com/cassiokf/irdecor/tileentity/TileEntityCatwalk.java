@@ -13,15 +13,13 @@ public class TileEntityCatwalk extends TileEntitySyncBase {
 
     private final Set<ForgeDirection> blacklistedFacings = EnumSet.noneOf(ForgeDirection.class);
 
-    public boolean toggleFacing(ForgeDirection facing) {
+    public void toggleFacing(ForgeDirection facing) {
         if (blacklistedFacings.contains(facing)) {
             blacklistedFacings.remove(facing);
             syncToClient();
-            return false;
         } else {
             blacklistedFacings.add(facing);
             syncToClient();
-            return true;
         }
     }
 

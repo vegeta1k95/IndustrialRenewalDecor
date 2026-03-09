@@ -99,9 +99,4 @@ public class BlockSign extends BlockIRHorizontalFacing {
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int x, int y, int z) {
         return null; // No collision
     }
-
-    @Override
-    public int damageDropped(int meta) {
-        return 0;
-    }
 }

@@ -125,9 +125,4 @@ public class BlockCatwalkHatch extends BlockIRHorizontalFacing {
     public int getLightOpacity() {
         return 0;
     }
-
-    @Override
-    public int damageDropped(int meta) {
-        return 0;
-    }
 }

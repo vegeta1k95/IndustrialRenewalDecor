@@ -70,8 +70,4 @@ public class BlockFirstAidKit extends BlockIRHorizontalFacing {
         return super.getCollisionBoundingBoxFromPool(world, x, y, z);
     }
 
-    @Override
-    public int damageDropped(int meta) {
-        return 0;
-    }
 }

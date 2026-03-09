@@ -73,9 +73,4 @@ public class BlockFireExtinguisher extends BlockIRHorizontalFacing {
         setBlockBoundsBasedOnState(world, x, y, z);
         return super.getCollisionBoundingBoxFromPool(world, x, y, z);
     }
-
-    @Override
-    public int damageDropped(int meta) {
-        return 0;
-    }
 }

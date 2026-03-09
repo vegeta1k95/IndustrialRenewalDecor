@@ -269,8 +269,4 @@ public class BlockCatwalkStair extends BlockIRHorizontalFacing {
         }
     }
 
-    @Override
-    public int damageDropped(int meta) {
-        return 0;
-    }
 }

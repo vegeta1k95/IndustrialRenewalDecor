@@ -170,9 +170,4 @@ public class BlockCatwalkLadder extends BlockIRHorizontalFacing {
         if (entry != ForgeDirection.WEST && mask.intersectsWith(west)) list.add(west);
         if (entry != ForgeDirection.EAST && mask.intersectsWith(east)) list.add(east);
     }
-
-    @Override
-    public int damageDropped(int meta) {
-        return 0;
-    }
 }
