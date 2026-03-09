@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "facing=north,onwall=false": { "model": "irdecor:block/firstaid_kit/firstaid_kit" },
+    "facing=south,onwall=false": { "model": "irdecor:block/firstaid_kit/firstaid_kit", "y": 180 },
+    "facing=west,onwall=false": { "model": "irdecor:block/firstaid_kit/firstaid_kit", "y": 90 },
+    "facing=east,onwall=false": { "model": "irdecor:block/firstaid_kit/firstaid_kit", "y": 270 },
+    "facing=north,onwall=true": { "model": "irdecor:block/firstaid_kit/firstaid_kit" },
+    "facing=south,onwall=true": { "model": "irdecor:block/firstaid_kit/firstaid_kit", "y": 180 },
+    "facing=west,onwall=true": { "model": "irdecor:block/firstaid_kit/firstaid_kit", "y": 90 },
+    "facing=east,onwall=true": { "model": "irdecor:block/firstaid_kit/firstaid_kit", "y": 270 }
+  }
+}

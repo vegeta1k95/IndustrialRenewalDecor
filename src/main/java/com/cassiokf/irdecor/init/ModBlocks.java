@@ -10,7 +10,10 @@ import com.cassiokf.irdecor.blocks.BlockCatwalkHatch;
 import com.cassiokf.irdecor.blocks.BlockCatwalkLadder;
 import com.cassiokf.irdecor.blocks.BlockCatwalkStair;
 import com.cassiokf.irdecor.blocks.BlockColumn;
+import com.cassiokf.irdecor.blocks.BlockFireExtinguisher;
+import com.cassiokf.irdecor.blocks.BlockFirstAidKit;
 import com.cassiokf.irdecor.blocks.BlockHandRail;
+import com.cassiokf.irdecor.blocks.BlockIRBase;
 import com.cassiokf.irdecor.blocks.BlockPillar;
 import com.cassiokf.irdecor.blocks.BlockPlatform;
 import com.cassiokf.irdecor.blocks.BlockRazorWire;
@@ -40,6 +43,20 @@ public class ModBlocks {
     public static Block CATWALK_IRON;
     public static Block CATWALK_STEEL;
     public static Block PLATFORM;
+
+    // Hazard blocks
+    public static Block BLOCK_HAZARD;
+    public static Block CAUTION_HAZARD;
+    public static Block DEFECTIVE_HAZARD;
+    public static Block SAFETY_HAZARD;
+    public static Block RADIATION_HAZARD;
+    public static Block AISLE_HAZARD;
+    public static Block FIRE_HAZARD;
+
+    // Misc
+    public static Block FIRE_EXTINGUISHER;
+    public static Block FRAME;
+    public static Block FIRSTAID_KIT;
 
     // Signs
     public static Block SIGN_HV;
@@ -78,6 +95,20 @@ public class ModBlocks {
         CATWALK_STAIR_STEEL = registerBlock(new BlockCatwalkStair(), "catwalk_stair_steel");
         CATWALK_LADDER_IRON = registerBlock(new BlockCatwalkLadder(), "catwalk_ladder_iron");
         CATWALK_LADDER_STEEL = registerBlock(new BlockCatwalkLadder(), "catwalk_ladder_steel");
+
+        // Hazard blocks
+        BLOCK_HAZARD = registerBlock(new BlockIRBase(), "block_hazard");
+        CAUTION_HAZARD = registerBlock(new BlockIRBase(), "caution_hazard");
+        DEFECTIVE_HAZARD = registerBlock(new BlockIRBase(), "defective_hazard");
+        SAFETY_HAZARD = registerBlock(new BlockIRBase(), "safety_hazard");
+        RADIATION_HAZARD = registerBlock(new BlockIRBase(), "radiation_hazard");
+        AISLE_HAZARD = registerBlock(new BlockIRBase(), "aisle_hazard");
+        FIRE_HAZARD = registerBlock(new BlockIRBase(), "fire_hazard");
+
+        // Misc
+        FIRE_EXTINGUISHER = registerBlock(new BlockFireExtinguisher(), "fire_extinguisher");
+        FRAME = registerBlock(new BlockIRBase(), "frame");
+        FIRSTAID_KIT = registerBlock(new BlockFirstAidKit(), "firstaid_kit");
 
         // Signs
         SIGN_HV = registerBlock(new BlockSign(), "sign_hv");

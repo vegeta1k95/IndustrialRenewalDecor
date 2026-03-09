@@ -24,18 +24,24 @@ public class BlockColumn extends BlockIRConnectable {
         // UP/DOWN: only connect to solid blocks, catwalks, platforms — NOT to other pillars/columns
         // (stacked columns should show plain intermediate posts, not junction pieces)
         if (direction == ForgeDirection.DOWN) {
-            return neighbor.isNormalCube() || neighbor instanceof BlockPlatform
-                || neighbor instanceof BlockPillar || neighbor instanceof BlockBrace;
+            if (neighbor instanceof BlockBrace) {
+                return BlockBrace.allowsConnectionFrom(world, x, y - 1, z, ForgeDirection.UP);
+            }
+            return neighbor.isNormalCube() || neighbor instanceof BlockPlatform || neighbor instanceof BlockPillar;
         }
         if (direction == ForgeDirection.UP) {
             return neighbor.isNormalCube() || neighbor instanceof BlockCatwalk
-                || neighbor instanceof BlockPlatform || neighbor instanceof BlockPillar
-                || neighbor instanceof BlockBrace;
+                || neighbor instanceof BlockPlatform
+                || neighbor instanceof BlockPillar;
         }
-        // Horizontal connections
-        return neighbor instanceof BlockPillar || neighbor instanceof BlockColumn
-            || neighbor instanceof BlockCatwalk
-            || neighbor instanceof BlockBrace;
+        // Horizontal connections: braces only if not blocked from this side
+        if (neighbor instanceof BlockBrace) {
+            int nx = x + direction.offsetX, nz = z + direction.offsetZ;
+            return BlockBrace.allowsConnectionFrom(world, nx, y, nz, direction.getOpposite());
+        }
+        return neighbor.isNormalCube() || neighbor instanceof BlockPillar
+            || neighbor instanceof BlockColumn
+            || neighbor instanceof BlockCatwalk;
     }
 
     @Override

@@ -9,6 +9,8 @@ import com.cassiokf.irdecor.blocks.BlockCatwalkGate;
 import com.cassiokf.irdecor.blocks.BlockCatwalkHatch;
 import com.cassiokf.irdecor.blocks.BlockCatwalkLadder;
 import com.cassiokf.irdecor.blocks.BlockCatwalkStair;
+import com.cassiokf.irdecor.blocks.BlockFireExtinguisher;
+import com.cassiokf.irdecor.blocks.BlockFirstAidKit;
 import com.cassiokf.irdecor.blocks.BlockHandRail;
 import com.cassiokf.irdecor.blocks.BlockIRConnectable;
 import com.cassiokf.irdecor.blocks.BlockRazorWire;
@@ -83,6 +85,8 @@ public class ModProperties {
         registerStairProperties();
         registerLadderProperties();
         registerSignProperties();
+        registerFireExtinguisherProperties();
+        registerFirstAidKitProperties();
     }
 
     private static void registerHandRailProperties() {
@@ -151,6 +155,20 @@ public class ModProperties {
         registerOnClassAndItems(BlockSign.class, onwallProp, signs);
     }
 
+    private static void registerFireExtinguisherProperties() {
+        var onwallProp = BooleanBlockProperty.flag("onwall", 0x4);
+
+        registerFacingWithInventory(BlockFireExtinguisher.class, ModBlocks.FIRE_EXTINGUISHER);
+        registerOnClassAndItems(BlockFireExtinguisher.class, onwallProp, ModBlocks.FIRE_EXTINGUISHER);
+    }
+
+    private static void registerFirstAidKitProperties() {
+        var onwallProp = BooleanBlockProperty.flag("onwall", 0x4);
+
+        registerFacingWithInventory(BlockFirstAidKit.class, ModBlocks.FIRSTAID_KIT);
+        registerOnClassAndItems(BlockFirstAidKit.class, onwallProp, ModBlocks.FIRSTAID_KIT);
+    }
+
     private static void registerConnectableProperties() {
         String[] dirNames = { "down", "up", "north", "south", "west", "east" };
         ForgeDirection[] dirs = { ForgeDirection.DOWN, ForgeDirection.UP, ForgeDirection.NORTH, ForgeDirection.SOUTH,
@@ -175,18 +193,15 @@ public class ModProperties {
         // Catwalks: north+south true (one parallel pair of railings)
         // Platform: north+south true (railings on two sides)
         boolean[][] inventoryDefaults = {
-            // down,  up,    north, south, west,  east
+            // down, up, north, south, west, east
             { false, false, false, false, false, false }, // pillar
             { false, false, false, false, true, true }, // column
             { false, false, true, true, false, false }, // catwalk
             { false, false, false, false, true, true }, // platform
         };
-        Block[][] blockGroups = {
-            { ModBlocks.PILLAR_IRON, ModBlocks.PILLAR_STEEL },
-            { ModBlocks.COLUMN_IRON, ModBlocks.COLUMN_STEEL },
-            { ModBlocks.CATWALK_IRON, ModBlocks.CATWALK_STEEL },
-            { ModBlocks.PLATFORM },
-        };
+        Block[][] blockGroups = { { ModBlocks.PILLAR_IRON, ModBlocks.PILLAR_STEEL },
+            { ModBlocks.COLUMN_IRON, ModBlocks.COLUMN_STEEL }, { ModBlocks.CATWALK_IRON, ModBlocks.CATWALK_STEEL },
+            { ModBlocks.PLATFORM }, };
 
         for (int g = 0; g < blockGroups.length; g++) {
             for (int i = 0; i < 6; i++) {

@@ -27,15 +27,19 @@ public class BlockPillar extends BlockIRConnectable {
         // UP/DOWN: only connect to solid blocks, catwalks, platforms — NOT to other pillars/columns
         // (stacked pillars should show plain intermediate posts, not junction pieces)
         if (direction == ForgeDirection.DOWN) {
-            return neighbor.isNormalCube() || neighbor instanceof BlockPlatform
-                || neighbor instanceof BlockColumn;
+            return neighbor.isNormalCube() || neighbor instanceof BlockPlatform || neighbor instanceof BlockColumn;
         }
         if (direction == ForgeDirection.UP) {
             return neighbor.isNormalCube() || neighbor instanceof BlockCatwalk
-                || neighbor instanceof BlockPlatform || neighbor instanceof BlockColumn;
+                || neighbor instanceof BlockPlatform
+                || neighbor instanceof BlockColumn;
         }
-        // Horizontal connections
-        return neighbor instanceof BlockColumn || neighbor instanceof BlockBrace || neighbor instanceof BlockHandRail;
+        // Horizontal connections: braces only if not blocked from this side
+        if (neighbor instanceof BlockBrace) {
+            int nx = x + direction.offsetX, nz = z + direction.offsetZ;
+            return BlockBrace.allowsConnectionFrom(world, nx, y, nz, direction.getOpposite());
+        }
+        return neighbor instanceof BlockColumn || neighbor instanceof BlockHandRail;
     }
 
     @Override

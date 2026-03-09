@@ -17,8 +17,19 @@ tile.irdecor.catwalk_stair_steel.name=Steel Catwalk Stair
 tile.irdecor.catwalk_ladder_iron.name=Iron Catwalk Ladder
 tile.irdecor.catwalk_ladder_steel.name=Steel Catwalk Ladder
 
+tile.irdecor.block_hazard.name=Hazard Block
+tile.irdecor.caution_hazard.name=Caution Hazard Block
+tile.irdecor.defective_hazard.name=Defective Hazard Block
+tile.irdecor.safety_hazard.name=Safety Hazard Block
+tile.irdecor.radiation_hazard.name=Radiation Hazard Block
+tile.irdecor.aisle_hazard.name=Aisle Hazard Block
+tile.irdecor.fire_hazard.name=Fire Hazard Block
+tile.irdecor.fire_extinguisher.name=Fire Extinguisher
+tile.irdecor.frame.name=Rail Frame
+tile.irdecor.firstaid_kit.name=First Aid Kit
+
 tile.irdecor.sign_hv.name=High Voltage Sign
-tile.irdecor.sign_ra.name=Radioactive Sign
-tile.irdecor.sign_c.name=Corrosive Sign
+tile.irdecor.sign_ra.name=Restricted Area Sign
+tile.irdecor.sign_c.name=Caution Sign
 
 itemGroup.irdecor=Industrial Renewal Decor

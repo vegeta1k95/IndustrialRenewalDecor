@@ -103,12 +103,15 @@ public class BlockCatwalk extends BlockIRConnectable {
             int nx = x + placeDir.offsetX;
             int ny = y;
             int nz = z + placeDir.offsetZ;
-            if (world.getBlock(nx, ny, nz).isReplaceable(world, nx, ny, nz)) {
+            if (world.getBlock(nx, ny, nz)
+                .isReplaceable(world, nx, ny, nz)) {
                 if (!world.isRemote) {
                     Block catwalkBlock = Block.getBlockFromItem(held.getItem());
                     world.setBlock(nx, ny, nz, catwalkBlock, 0, 3);
                     world.playSoundEffect(
-                        nx + 0.5, ny + 0.5, nz + 0.5,
+                        nx + 0.5,
+                        ny + 0.5,
+                        nz + 0.5,
                         catwalkBlock.stepSound.func_150496_b(),
                         (catwalkBlock.stepSound.getVolume() + 1.0F) / 2.0F,
                         catwalkBlock.stepSound.getPitch() * 0.8F);
@@ -126,25 +129,30 @@ public class BlockCatwalk extends BlockIRConnectable {
 
         // Place stair when clicking top or side with stair in hand
         if (held != null && Block.getBlockFromItem(held.getItem()) instanceof BlockCatwalkStair
-            && side >= 1 && side <= 5) {
+            && side >= 1
+            && side <= 5) {
             ForgeDirection placeDir;
             if (side == 1) {
                 // Top face: place on opposite side of player's look direction
                 placeDir = IRDirectionHelper.getHorizontalFacing(player);
             } else {
                 // Side face: place on opposite side of clicked face
-                placeDir = ForgeDirection.getOrientation(side).getOpposite();
+                placeDir = ForgeDirection.getOrientation(side)
+                    .getOpposite();
             }
             int nx = x + placeDir.offsetX;
             int ny = y;
             int nz = z + placeDir.offsetZ;
-            if (world.getBlock(nx, ny, nz).isReplaceable(world, nx, ny, nz)) {
+            if (world.getBlock(nx, ny, nz)
+                .isReplaceable(world, nx, ny, nz)) {
                 if (!world.isRemote) {
                     Block stairBlock = Block.getBlockFromItem(held.getItem());
                     int newMeta = IRDirectionHelper.directionToMeta(placeDir);
                     world.setBlock(nx, ny, nz, stairBlock, newMeta, 3);
                     world.playSoundEffect(
-                        nx + 0.5, ny + 0.5, nz + 0.5,
+                        nx + 0.5,
+                        ny + 0.5,
+                        nz + 0.5,
                         stairBlock.stepSound.func_150496_b(),
                         (stairBlock.stepSound.getVolume() + 1.0F) / 2.0F,
                         stairBlock.stepSound.getPitch() * 0.8F);

@@ -48,11 +48,14 @@ public class BlockCatwalkStair extends BlockIRHorizontalFacing {
                 int nx = x + face.offsetX;
                 int ny = y + 1;
                 int nz = z + face.offsetZ;
-                if (world.getBlock(nx, ny, nz).isReplaceable(world, nx, ny, nz)) {
+                if (world.getBlock(nx, ny, nz)
+                    .isReplaceable(world, nx, ny, nz)) {
                     if (!world.isRemote) {
                         world.setBlock(nx, ny, nz, heldBlock, 0, 3);
                         world.playSoundEffect(
-                            nx + 0.5, ny + 0.5, nz + 0.5,
+                            nx + 0.5,
+                            ny + 0.5,
+                            nz + 0.5,
                             heldBlock.stepSound.func_150496_b(),
                             (heldBlock.stepSound.getVolume() + 1.0F) / 2.0F,
                             heldBlock.stepSound.getPitch() * 0.8F);
@@ -75,13 +78,16 @@ public class BlockCatwalkStair extends BlockIRHorizontalFacing {
                 int nx = x + face.offsetX;
                 int ny = y + 1;
                 int nz = z + face.offsetZ;
-                if (world.getBlock(nx, ny, nz).isReplaceable(world, nx, ny, nz)) {
+                if (world.getBlock(nx, ny, nz)
+                    .isReplaceable(world, nx, ny, nz)) {
                     if (!world.isRemote) {
                         Block stairBlock = Block.getBlockFromItem(held.getItem());
                         int newMeta = IRDirectionHelper.directionToMeta(face);
                         world.setBlock(nx, ny, nz, stairBlock, newMeta, 3);
                         world.playSoundEffect(
-                            nx + 0.5, ny + 0.5, nz + 0.5,
+                            nx + 0.5,
+                            ny + 0.5,
+                            nz + 0.5,
                             stairBlock.stepSound.func_150496_b(),
                             (stairBlock.stepSound.getVolume() + 1.0F) / 2.0F,
                             stairBlock.stepSound.getPitch() * 0.8F);
@@ -113,8 +119,11 @@ public class BlockCatwalkStair extends BlockIRHorizontalFacing {
                 }
                 world.setBlockMetadataWithNotify(x, y, z, meta, 3);
                 world.playSoundEffect(
-                    x + 0.5, y + 0.5, z + 0.5,
-                    "random.door_open", 1.0f,
+                    x + 0.5,
+                    y + 0.5,
+                    z + 0.5,
+                    "random.door_open",
+                    1.0f,
                     world.rand.nextFloat() * 0.2f + 0.9f);
             }
             return true;

@@ -18,7 +18,8 @@
       "Bash(sed:*)",
       "Bash(JAVA_HOME=\"/c/Users/tuner/.gradle/jdks/azul_systems__inc_-21-amd64-windows.2\" ./gradlew spotlessApply:*)",
       "Bash(export:*)",
-      "Bash(do sed:*)"
+      "Bash(do sed:*)",
+      "Bash(JAVA_HOME=\"/c/Users/tuner/.gradle/jdks/azul_systems__inc_-21-amd64-windows.2\" ./gradlew build:*)"
     ]
   }
 }

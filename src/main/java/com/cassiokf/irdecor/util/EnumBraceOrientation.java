@@ -32,9 +32,7 @@ public enum EnumBraceOrientation {
     }
 
     public static EnumBraceOrientation byMetadata(int meta) {
-        if (meta < 0 || meta >= META_LOOKUP.length) {
-            meta = 0;
-        }
+        meta &= 0x7;
         return META_LOOKUP[meta];
     }
 
@@ -78,4 +76,5 @@ public enum EnumBraceOrientation {
     public String getSerializedName() {
         return name;
     }
+
 }
